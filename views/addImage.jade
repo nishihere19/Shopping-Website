@@ -1,0 +1,15 @@
+extends layout
+.nav
+  block nav 
+      ul
+        li
+          a(href='/') Home
+block main-content
+    .any
+        form(action="/addImage", method="post")
+            ul.addProducts
+                li
+                    label(for="img") Upload Image of Product
+                    input(type="text" value=id name="id" style="display:none;")
+                    input(type="file", name="img")
+                    input(type="submit", value="Submit")

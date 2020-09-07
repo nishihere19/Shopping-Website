@@ -1,0 +1,56 @@
+extends layout
+.nav
+  block nav 
+      ul
+        li
+          a(href='/') Home
+block main-content
+    .any
+        form(action="/addProduct", method="post")
+            ul.addProducts
+                li
+                    label(for="category") Select Category
+                    select(name="category" placeholder="Select")
+                        option(name="None") None
+                        option(name="Mobile and Accessories") Mobile and Accessories
+                        option(name="Men's Fashion") Men's Fashion
+                        option(name="Electronics and Appliances") Electronics and Appliances
+                        option(name="Computers") Computers
+                        option(name="Women's Fashion") Women's Fashion
+                        option(name="Furniture and Home Improvement") Furniture and Home Improvement
+                        option(name="Children's Toys/Games and Footwear") Children's Toys/Games and Footwear
+                        option(name="Travel Accessories") Travel Accessories
+                        option(name="Automotive") Automotive
+                        option(name="Books") Books
+                        option(name="Stationary") Stationary
+                li
+                    label(for="name") Name of Product
+                    input(type="text" name="name")
+                li
+                    label(for="img") Upload Image of Product
+                    input(type="file", name="img")
+                li
+                    label(for="stock") No. of Units
+                    input(type="text" name="stock") 
+                li
+                    label(for="price") Price(MRP)
+                    input(type="text" name="price")
+                li
+                    label(for="desc") Description of the Product
+                    input(type="text" name="desc")
+                li
+                    label(for="features") Features
+                    input(type="text" name="features")
+                li
+                    label(for="brand") Brand
+                    input(type="text", name="brand")
+                li
+                    label(for="model") Model
+                    input(type="text", name="model")
+                li
+                    label(for="size") Size
+                    input(type="text", name="size")
+                li
+                    label(for="color") Color
+                    input(type="text", name="color")
+                input(type="submit", value="Add Your Product")

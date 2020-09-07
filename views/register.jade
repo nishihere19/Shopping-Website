@@ -1,0 +1,29 @@
+extends layout
+.nav
+  block nav 
+      ul
+        li
+          a(href='/') Home
+block main-content
+  .any
+    p #{msg}
+    form(action="/register", method="post")
+        ul
+            li
+                label Email
+                input(type="text" name="email" placeholder="Example xyz@gmail.com")
+            li
+                label Username
+                input(type="text" name="name" placeholder="username")
+            li
+                label Password
+                input(type="password" name="password")
+            li
+                label Account-Type
+                label(for="Seller") Seller
+                input(type="checkbox", name="Seller")
+                label(for="Buyer") Buyer
+                input(type="checkbox" name="Buyer")
+            li
+                input(type="submit", value="Register On SSS!")
+            

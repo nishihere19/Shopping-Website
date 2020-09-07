@@ -1,0 +1,40 @@
+{
+  "name": "shopping-website",
+  "version": "1.0.0",
+  "description": "Allows you to make accounts a customers and sellers and add and buy products. Based on Node js , Express, jade and Mongodb.",
+  "main": "www",
+  "scripts": {
+    "test": "start",
+    "start": "node ./bin/www"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nishihere19/Shopping-Website.git"
+  },
+  "keywords": [
+    "shopping",
+    "login",
+    "register",
+    "node",
+    "js",
+    "mongoose"
+  ],
+  "author": "Nishi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nishihere19/Shopping-Website/issues"
+  },
+  "homepage": "https://github.com/nishihere19/Shopping-Website#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.5",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "fs": "0.0.1-security",
+    "jade": "^1.11.0",
+    "mongoose": "^5.10.2",
+    "multer": "^1.4.2",
+    "path": "^0.12.7",
+    "validator": "^13.1.1"
+  }
+}
