@@ -1,0 +1,67 @@
+extends layout
+.nav
+  block nav 
+      ul
+        li
+          a(href='/') Home
+block main-content
+    .any
+        .itemDetails
+            table
+                tr
+                    td(style="width: 100%")
+                        img(src="../"+result.img style="height: 200px; width: 200px; float: left")
+                tr
+                    td
+                        span(style="float: left")=result.name
+                        a.edit(href="/edit/"+result._id+"/name") Edit
+                tr
+                    td
+                        span Category: #{result.category}
+                        a.edit(href="/edit/"+result._id+"/category") Edit
+                tr
+                    td
+                        span Brand: #{result.brand}
+                        a.edit(href="/edit/"+result._id+"/brand") Edit
+                tr
+                    td
+                        span Model: #{result.modl}
+                        a.edit(href="/edit/"+result._id+"/modl") Edit
+                tr
+                    td
+                        span MRP: #{result.price}
+                        a.edit(href="/edit/"+result._id+"/price") Edit
+                tr
+                   td
+                        span Stock: #{result.stock}
+                        a.edit(href="/edit/"+result._id+"/stock") Edit
+                tr
+                    td
+                        span.heading Description: 
+                        span=result.description
+                        a.edit(href="/edit/"+result._id+"/description") Edit
+                tr
+                    td
+                        span.heading Features: 
+                        span=result.features
+                        a.edit(href="/edit/"+result._id+"/features") Edit
+                tr
+                    td
+                        span Size: #{result.size } 
+                        a.edit(href="/edit/"+result._id+"/size") Edit
+                tr 
+                    td 
+                        span Color: #{result.color}
+                        a.edit(href="/edit/"+result._id+"/color") Edit
+        .buyers
+            p Buyers
+            ul
+                if(result1)
+                    each items in result1
+                        li
+                            br
+                            span Email: #{items.email}
+                            br
+                            span Username: #{items.username}    
+                
+              

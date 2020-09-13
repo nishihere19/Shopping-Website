@@ -5,37 +5,51 @@ extends layout
         li
           a(href='/') Home
         li
-          a(href='/Files') Files
-        li
-          a(href='/Folders') Folders
-        li
-          a(href='/') Settings
+          a(href='/') My Stuff
           ul
             li
-              a(href='/resetPass') Password Reset
+              a(href='/Orders') My Orders
             li
-              a(href='/delUser') Delete Account
+              a(href='/Wishlist') My Wishlist
             li.last
-              a(href='/logout') Logout
-        
-        li 
-          form(action="/search", method="post")
-            input(type="text", name="Searchval",id="searchbar" ,placeholder="Search Files/Folders")
-            input(type="submit", name="Search", value="Search")
+              a(href='/Cart') My Cart
+        li
+          a(href='/logout') Logout
+
 
 
 block main-content
   .any
-    //h1.title #{title}
-    p.msg #{message}
-    form(method="post" enctype="multipart/form-data" action="/uploadFile").file
-      input(type="file", name="myFile")
-      input(type="submit", value="Upload")
-    form(method="post" enctype="multipart/form-data" action="/uploadFolder").folder
-      input(type="text", name="nameOfFolder", placeholder="Folder Name")
-      input(type="file", name="myFiles" multiple)
-      input(type="submit", value="Upload")
+    //h1.title #{title} 
+    p.msg #{msg}
+    table
+      if(result.length)
+        each item in result
+          if(item)
+            tr.items(id="/"+item._id class="items" style="width: 100%")
+              td(style="float: left")
+                div(style="display: inline-block")
+                  img(src=item.img style="height: 200px; width: 200px")
+                  ul.details
+                    li
+                      span=item.name
+                    li
+                      span=item.price
     script.
+      var length=document.getElementsByClassName('items').length;
+      console.log(length);
+      for(i=0;i<length;i++){
+        document.getElementsByClassName('items')[i].addEventListener('click',function(e){
+      id=this.id.slice(1,);
+      console.log(id);
+      location.href="/productDetailsBuyer/"+id;
+      },true)
+      }
+      document.getElementsByClassName('items')[0].addEventListener('click',function(e){
+      id=this.id.slice(1,);
+      console.log(id);
+      location.href="/productdetails/"+id;
+      },true)
       $(function(){
         console.log("w");
         $('#searchbar').autocomplete({

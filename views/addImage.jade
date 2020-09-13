@@ -6,7 +6,7 @@ extends layout
           a(href='/') Home
 block main-content
     .any
-        form(action="/addImage", method="post")
+        form(action="/addImage" enctype="multipart/form-data" method="post")
             ul.addProducts
                 li
                     label(for="img") Upload Image of Product

@@ -1,32 +1,44 @@
 extends layout
-.nav
-  block nav 
-      ul
-        li
-          a(href='/') Home
-        li
-          a(href='/addProducts') Add Products
-        li
-          a(href='/') Settings
-          ul
-            li
-              a(href='/resetPass') Password Reset
-            li
-              a(href='/delUser') Delete Account
-            li.last
-              a(href='/logout') Logout
-        li 
-          form(action="/search", method="post")
-            input(type="text", name="Searchval",id="searchbar" ,placeholder="Search Products")
-            input(type="submit", name="Search", value="Search")
+script(src="/js/javascript.js")
+.header
+  .nav
+    block nav 
+        ul
+          li
+            a(href='/') Home
+          li
+            a(href='/addProducts') Add Products
+          li
+            a(href='/logout') Logout
+  block content
+    .header-head
+      p Welcome to Spider-Shopping-Showroom
 block main-content
   .any
-    //h1.title #{title}
+    //h1.title #{title} 
     p.msg #{msg}
-    each item in result
-      label #{item.img}
-      img(src="data:image/jpg;base64;"+item.img style="height: 50px; width: 50px")
+    table
+      if(result.length)
+        each item in result
+          tr.items(id="/"+item._id class="items" style="width: 100%")
+            td(style="float: left")
+              div(style="display: inline-block")
+                img(src=item.img style="height: 200px; width: 200px")
+                ul.details
+                  li
+                    span=item.name
+                  li
+                    span=item.price
     script.
+      var length=document.getElementsByClassName('items').length;
+      console.log(length);
+      for(i=0;i<length;i++){
+        document.getElementsByClassName('items')[i].addEventListener('click',function(e){
+      id=this.id.slice(1,);
+      console.log(id);
+      location.href="/productDetailsSeller/"+id;
+      },true)
+      }
       $(function(){
         console.log("w");
         $('#searchbar').autocomplete({

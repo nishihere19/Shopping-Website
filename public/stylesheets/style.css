@@ -13,15 +13,20 @@ body {
   font-family: monospace;
   background-size: cover;
   background-position: center;
-  background: rgb(2,0,36);
   background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,88,121,1) 39%, rgba(0,212,255,1) 100%);
+  
   color: rgb(206, 197, 197);
   font-size: 1.5rem;
   text-align: center;
   font-weight: bold;
 }
 
-
+span{
+  float: left;
+}
+.edit{
+  float: right;
+}
 a {
 
  color: rgb(248, 240, 240);
@@ -36,13 +41,14 @@ input[type="submit"]:hover{
   background-color: rgb(132, 214, 166);
 }
 input[type="submit"]{
-  color: rgb(236, 228, 228);
-  background-color: rgb(51, 50, 50);
+  color: rgb(54, 52, 52);
+  background-color: rgb(212, 196, 196);
   height: 30px;
-  width: 100px;
+  width: 300px;
   font-family: 'Courier New', Courier, monospace;
   font-size: 1.2rem;
-  border: none;
+  border: 2px solid black;
+  margin: 0.3rem;
   font-weight: bold;
 }
 input[type="text"]{
@@ -53,7 +59,7 @@ input[type="search"]{
   height: 40px;
   width: 250px;
   border: none;
-  margin: 5px;
+  margin: 2px;
   background-color: rgb(214, 206, 206);
 }
 input[type="password"]{
@@ -82,49 +88,47 @@ table{
 a {
   text-decoration: none;
 }
-.any{
-  position: relative;
-  margin-top: 4rem;
-  z-index: 0;
-}
+
 .nav{
-  background: rgb(221, 204, 182);
+  background: rgb(204, 74, 41);
   position: absolute;
   width: 100%;
   height: 4rem;
+  margin-bottom: 1rem;
   top: 0;
   left: 0;
   font-family: monospace;
   display: inline-flex;
 }
-nav {
-
-    background: rgb(221, 204, 182);
-    position: relative;
-    top:0;
-    left: 0;
+.any{
+  position: relative;
+  margin-top: 5rem;
+  z-index: 0;
 }
 
 .nav ul {
-  background: rgb(221, 204, 182);
+  background: rgb(204, 74, 41);
     list-style: none;
     margin: 0;
     padding-left: 0;
-    height: 4rem;
+    width: 100%;
+    
     
 }
 
 .nav ul li {
     color: rgb(49, 45, 45);
-  background: rgb(221, 204, 182);
+  background: rgb(204, 74, 41);;
     display: inline-block;
-    
     padding: 1rem;
     position: relative;
     text-decoration: none;
   transition-duration: 0.5s;
-}
   
+}
+.search{
+  padding: 0.5rem;
+}
 .nav ul li a {
   color: rgb(46, 41, 41);
 }
@@ -164,78 +168,7 @@ nav {
     clear: both;
   width: 100%;
 }
-.options {
-  font-family: monospace;
-  float: right;
-  width: 150px;
-  
-}
 
-.options ul {
-background: rgb(221, 204, 182);
-  list-style: none;
-  margin: 0;
-  padding-right: 0;
-  
-}
-
-.options ul li {
-  color: rgb(49, 45, 45);
-background: rgb(221, 204, 182);
-  display: block;
-  padding: 1rem;
-  float: right;
-  position: relative;
-  text-decoration: none;
-transition-duration: 0.5s;
-}
-
-.options ul li a {
-color: rgb(46, 41, 41);
-}
-
-.options ul li:hover {
-  background: rgb(246, 248, 97);
-  cursor: pointer;
-}
-
-.options ul li ul {
-  background: rgb(221, 204, 182);
-  visibility: hidden;
-opacity: 0;
-  position: absolute;
-transition: all 0.5s ease;
-display: none;
-width: 100%;
-}
-
-.options ul li:hover >
-.submenu:hover {
-visibility: visible;
-opacity: 1;
-
-display: inline-block;
-position: absolute;
-left: -100%;
-}
-.options ul li:hover > ul,
-.submenu {
-visibility: visible;
-opacity: 1;
-display: inline-block;
-position: absolute;
-left: -100%;
-margin: 0;
-}
-.submenu li {
-  clear: both;
-width: 100px;
-display: block;
-
-}
-.submenu li a{
-  text-align: center;
-}
 .ui-autocomplete {
   position: absolute;
   top: 100%;

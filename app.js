@@ -3,14 +3,16 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
+var mongodb=require('mongodb');
 var index = require('./routes/index');
 var session = require('express-session');
 var app = express();
 const router = require('./routes/index');
 var users = require('./routes/users');
 var multer= require('multer');
+var bcrypt=require('bcrypt');
 var fs= require('fs');
-mongoose.connect('mongodb://localhost/Shopping-Website', function(err){
+mongoose.connect('mongodb://localhost/Shopping-Website-1', function(err){
 	var db = mongoose.connection;
 	if(err){
 		db.on('error', console.error.bind(console, "MongoDB connection failed"));
